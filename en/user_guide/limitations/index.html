@@ -1,0 +1,535 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="User documentation for the SLYR QGIS plugin, which offers a full suite of tools for converting ESRI ArcMap and ArcGIS Pro documents to (and from!) QGIS formats">
+      
+      
+      
+        <link rel="canonical" href="https://slyr.north-road.com/en/user_guide/limitations/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+    
+    
+      
+        <title>Limitations - SLYR: the ESRI to QGIS Compatibility Suite - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#limitations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="SLYR: the ESRI to QGIS Compatibility Suite - Documentation" class="md-header__button md-logo" aria-label="SLYR: the ESRI to QGIS Compatibility Suite - Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/modelbaker_icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SLYR: the ESRI to QGIS Compatibility Suite - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Limitations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="orange" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/north-road/slyr" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    north-road/slyr
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="SLYR: the ESRI to QGIS Compatibility Suite - Documentation" class="md-nav__button md-logo" aria-label="SLYR: the ESRI to QGIS Compatibility Suite - Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/modelbaker_icon.svg" alt="logo">
+
+    </a>
+    SLYR: the ESRI to QGIS Compatibility Suite - Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/north-road/slyr" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    north-road/slyr
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#geopackages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geopackages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graduated-renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graduated renderer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label-class-disabled-in-arcgis-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label Class disabled in ArcGIS Pro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raster-catalog-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raster Catalog Layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rasters-in-gdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rasters in GDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rule-based-renderers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rule-based renderers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sld-to-lyrlyrx" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLD to LYR/LYRX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#svg-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      SVG Markers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-tile-packs-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector tile packs - Index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urgent-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Urgent fixes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="limitations">Limitations</h1>
+<p>SLYR will always follow the development in <strong>ESRI</strong> and <strong>QGIS</strong> to provide conversion opportunities as they arise, but if non-compatibility exists, then  conversions are limited. But don't be disheartened, if the ability is in ESRI, we can always develop it within QGIS. The other way around though - well that is out of our hands, and workarounds may be attempted. </p>
+<p>To be transparent, we have listed the current limitations that we know of, what we are doing about it and if there is a workaround in the meantime. </p>
+<blockquote>
+<p>If you know a limitation that isn't listed, please <a href="mailto:info@north-road.com">email us</a> and we will investigate it. </p>
+</blockquote>
+<!--## Template ##
+Description
+> Workaround intro
+
+1. Instruction
+2. Instruction
+
+> Proposed solution: currently working on it -->
+
+<h2 id="geopackages">Geopackages</h2>
+<p>Whilst we are love our neat geopackages in QGIS, ESRI is yet to deliver on this functionality. If you are going from QGIS to ESRI, you will need to save as a shapefile or a geodatabase. </p>
+<blockquote>
+<p>Workaround: See <a href="https://slyr.north-road.com/user_guide/troubleshooting/#geopackage">Geopackages Troubleshooting</a></p>
+<p>Proposed solution: ESRI geopackage development</p>
+</blockquote>
+<h2 id="graduated-renderer">Graduated renderer</h2>
+<p>SLYR cannot translate a QGIS graduated renderer to any comparable result in ArcGIS Pro if there's any gaps within the class ranges as ArcGIS Pro does not support gaps. </p>
+<blockquote>
+<p>Workaround: this is pretty easy
+ * Correct the class breaks from the QGZ project to remove the gaps between the classes.</p>
+<p>Proposed solution: currently working on it </p>
+</blockquote>
+<h2 id="label-class-disabled-in-arcgis-pro">Label Class disabled in ArcGIS Pro</h2>
+<p>When using the QGS to MAPX tool, the Label Class options are disabled in ArcGIS Pro.</p>
+<blockquote>
+<p>Workaround: tbc</p>
+<p>Proposed solution: currently working on it</p>
+</blockquote>
+<h2 id="raster-catalog-layers">Raster Catalog Layers</h2>
+<p>A Raster catalog is a feature of ArcMap. Its ArcGIS Pro equivalent is mosaic datasets. 
+In QGIS there is currently no equivalent to Raster Catalog Layers. Any of these layers will be skipped over in the process and omitted from the project.</p>
+<blockquote>
+<p>Workaround should only be used if you require the symbology for the raster. 
+* Extract the required layers within the Raster Catalog as raster layers. </p>
+<p>Proposed solution: there is no proposed solution as the data sits as a temporary layer within a project. Additionally, Raster Catalogs are a feature within ArcMap which is being phased out. </p>
+</blockquote>
+<h2 id="rasters-in-gdb">Rasters in GDB</h2>
+<p>Raster layers that are contained in GDB are currently not supported in QGIS.</p>
+<blockquote>
+<p>Workaround: 
+* Extract the rasters from the GDB if the symbology is required in QGIS</p>
+<p>Proposed solution: waiting on GDAL to develop the ability to read rasters in GDB.</p>
+</blockquote>
+<h2 id="rule-based-renderers">Rule-based renderers</h2>
+<p>One of our favourites features of <strong>QGIS</strong> Symbology is the ability to create efficient cartography through the use of Rule-Based renderers (Rule-Based classification symbology). There is currently no direct equivalent in ArcGIS Pro. Therefore, if your <strong>QGIS</strong> project has many layers based on rule-based classifications, try this for a workaround. </p>
+<blockquote>
+<p>Workaround: Painful - yes, Inefficient - yes - but let's manually capture the rule-based classification in the layer's  field. </p>
+</blockquote>
+<ol>
+<li>In <strong>QGIS</strong>, open up a layer's <code>attribute table</code>.</li>
+<li>Create the number of fields required to record each rule-based classification against the features.</li>
+<li>Select the fields according to your filter used in the rule-based classification.</li>
+<li>Populate the fields with the name of your rule-based classification.</li>
+<li>Save your edits.</li>
+<li>In the <code>layer panel</code>, duplicate the layer and name it according to the rule-based classification.</li>
+<li>Apply the symbology to each layers as per the rule-based classification.</li>
+</ol>
+<blockquote>
+<p>Proposed solution: still looking for one.</p>
+</blockquote>
+<h2 id="sld-to-lyrlyrx">SLD to LYR/LYRX</h2>
+<p>These tools do rely entirely on QGIS' SLD export capabilities, so the quality of the conversion will depend on the symbology options used in the ArcMap
+documents and how compatible they are with QGIS' SLD support. The SLD format itself has considerably less symbology functionality compared with either QGIS or ArcMap, therefore a conversion to SLD will often be a lossy process, dropping complex options back to simpler SLD supported symbology.</p>
+<blockquote>
+<p>Workaround: </p>
+</blockquote>
+<ul>
+<li>Reasses symbology choices in ArcMap</li>
+</ul>
+<blockquote>
+<p>Proposed solution: will improve with QGIS' SLD capabilities. If this is a major issue, consider funding the capability development of it. </p>
+</blockquote>
+<h2 id="svg-markers">SVG Markers</h2>
+<p>Warning: Water: QgsSvgMarkerSymbolLayer symbol layers cannot be converted yet</p>
+<blockquote>
+<p>Workaround: remove the SVG Marker or save it to import into ArcGIS Pro</p>
+<p>Proposed solution: currently working on it</p>
+</blockquote>
+<h2 id="vector-tile-packs-index">Vector tile packs - Index</h2>
+<p>There are two types of Vector Tile Packs (VTPK) in <strong>ESRI</strong>: 
+  Flat : supported by <strong>SLYR</strong>
+  Index: not supported <strong>SLYR</strong></p>
+<blockquote>
+<p>There is no workaround for this limitation.</p>
+<p>Proposed solution: waiting for funding and demand by the community to develop it.  </p>
+</blockquote>
+<h2 id="urgent-fixes">Urgent fixes</h2>
+<p>If you have a large project impacted by limitations that requires an urgent fix, <a href="mailto:info@north-road.com">contact us</a> here at <strong>North Road</strong> and we could look at a number of options. </p>
+<ul>
+<li>Undertake the conversion for you. This may attract a small fee, dependent on the work, but please ask. </li>
+<li>You could fund the development of the solution to go into the tool for all and become a member of our <a href="/user_guide/hall_of_fame">Hall of Fame</a></li>
+</ul>
+<blockquote>
+<p>By asking us, you are letting us know of the limitation and by delivering a solution for you, it may help develop a solution for all in the tool. </p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+    
+  </body>
+</html>
