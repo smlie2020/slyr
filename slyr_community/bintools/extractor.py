@@ -114,7 +114,8 @@ class Extractor:
         if Extractor.is_windows():
             kw['startupinfo'] = Extractor.get_process_startup_info()
             if sys.version_info >= (3, 6):
-                kw['encoding'] = "cp{}".format(Extractor.get_windows_code_page())
+                # kw['encoding'] = "cp{}".format(Extractor.get_windows_code_page())
+                kw['encoding'] = "utf-8"
         return kw
 
     @staticmethod
